@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointments</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="header">
+    <h1>📅 Appointment Management</h1>
+    <p>Add and view appointments</p>
+</div>
+
+<div class="container">
+
+<h2>Add Appointment</h2>
+
+<form method="POST">
+
+    <label>Appointment ID:</label>
+    <input type="text" name="appointment_id" required>
+
+    <label>Patient Name:</label>
+    <input type="text" name="patient_name">
+
+    <label>Doctor Name:</label>
+    <input type="text" name="doctor_name">
+
+    <label>Date:</label>
+    <input type="date" name="date">
+
+    <label>Time:</label>
+    <input type="time" name="time">
+
+    <label>Reason:</label>
+    <input type="text" name="reason">
+
+    <button type="submit">Add Appointment</button>
+
+</form>
+
+<h2>Appointment Records</h2>
+
+<table border="1" cellpadding="10">
+
+<tr>
+    <th>ID</th>
+    <th>Patient</th>
+    <th>Doctor</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Reason</th>
+</tr>
+
+{% for a in appointments %}
+<tr>
+    <td>{{ a[0] }}</td>
+    <td>{{ a[1] }}</td>
+    <td>{{ a[2] }}</td>
+    <td>{{ a[3] }}</td>
+    <td>{{ a[4] }}</td>
+    <td>{{ a[5] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<br>
+<a href="/"><button>Back to Dashboard</button></a>
+
+</div>
+
+</body>
+</html>

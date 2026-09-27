@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Departments</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="header">
+    <h1>🏥 Department Management</h1>
+    <p>Add and view hospital departments</p>
+</div>
+
+<div class="container">
+
+<h2>Add Department</h2>
+
+<form method="POST">
+
+    <label>Department ID:</label>
+    <input type="text" name="department_id" required>
+
+    <label>Department Name:</label>
+    <input type="text" name="department_name" required>
+
+    <label>Head Doctor:</label>
+    <input type="text" name="head_doctor">
+
+    <label>Location:</label>
+    <input type="text" name="location">
+
+    <button type="submit">Add Department</button>
+
+</form>
+
+<h2>Department Records</h2>
+
+<table border="1" cellpadding="10">
+
+<tr>
+    <th>ID</th>
+    <th>Department</th>
+    <th>Head Doctor</th>
+    <th>Location</th>
+</tr>
+
+{% for d in departments %}
+<tr>
+    <td>{{ d[0] }}</td>
+    <td>{{ d[1] }}</td>
+    <td>{{ d[2] }}</td>
+    <td>{{ d[3] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<br>
+<a href="/"><button>Back to Dashboard</button></a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Record Management System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>🏥 Patient Record Management System</h1>
+        <p>Hospital Management Dashboard</p>
+    </div>
+
+    <div class="container">
+
+        <div class="welcome">
+            <h2>Welcome to the Dashboard</h2>
+
+            <p>
+                Manage patient records, doctors, appointments,
+                departments and prescriptions.
+            </p>
+        </div>
+
+
+        <div class="dashboard">
+
+            <div class="card">
+                <h3>👤 Patients</h3>
+                <p>Manage patient information</p>
+                <br>
+               <a href="/patients">
+    <button>View Patients</button>
+</a> 
+            </div>
+
+
+            <div class="card">
+                <h3>👨‍⚕️ Doctors</h3>
+                <p>Manage doctor information</p>
+                <br>
+                <a href="/doctors">
+    <button>View Doctors</button>
+</a>
+            </div>
+
+
+            <div class="card">
+                <h3>📅 Appointments</h3>
+                <p>Manage patient appointments</p>
+                <br>
+                <a href="/appointments">
+    <button>Appointments</button>
+</a>
+            </div>
+
+
+            <div class="card">
+                <h3>🏢 Departments</h3>
+                <p>Manage hospital departments</p>
+                <br>
+                <a href="/departments">
+    <button>Departments</button>
+</a>
+            </div>
+
+
+            <div class="card">
+                <h3>💊 Prescriptions</h3>
+                <p>Manage patient prescriptions</p>
+                <br>
+                <a href="/prescriptions">
+    <button>Prescriptions</button>
+</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

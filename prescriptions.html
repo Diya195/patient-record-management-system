@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prescriptions</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="header">
+    <h1>💊 Prescription Management</h1>
+    <p>Add and view prescriptions</p>
+</div>
+
+<div class="container">
+
+<h2>Add Prescription</h2>
+
+<form method="POST">
+
+    <label>Prescription ID:</label>
+    <input type="text" name="prescription_id" required>
+
+    <label>Patient Name:</label>
+    <input type="text" name="patient_name">
+
+    <label>Doctor Name:</label>
+    <input type="text" name="doctor_name">
+
+    <label>Medicine:</label>
+    <input type="text" name="medicine">
+
+    <label>Dosage:</label>
+    <input type="text" name="dosage">
+
+    <label>Date:</label>
+    <input type="date" name="date">
+
+    <button type="submit">Add Prescription</button>
+
+</form>
+
+<h2>Prescription Records</h2>
+
+<table border="1" cellpadding="10">
+
+<tr>
+    <th>ID</th>
+    <th>Patient</th>
+    <th>Doctor</th>
+    <th>Medicine</th>
+    <th>Dosage</th>
+    <th>Date</th>
+</tr>
+
+{% for p in prescriptions %}
+<tr>
+    <td>{{ p[0] }}</td>
+    <td>{{ p[1] }}</td>
+    <td>{{ p[2] }}</td>
+    <td>{{ p[3] }}</td>
+    <td>{{ p[4] }}</td>
+    <td>{{ p[5] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<br>
+<a href="/"><button>Back to Dashboard</button></a>
+
+</div>
+
+</body>
+</html>
